@@ -1,18 +1,32 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <router-link to="/r/1">Read Post 1</router-link>
+      <latest-posts></latest-posts>
+      <input-base v-model="text"></input-base>
+      {{ text }}
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import LatestPosts from '../components/Blog/LatestPosts.vue';
+import InputBase from '../components/InputBase.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    LatestPosts,
+    InputBase
   },
+
+  data() { return {
+    text: '',
+  }}
+
 };
 </script>
+
+    LatestPosts

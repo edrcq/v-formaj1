@@ -1,12 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <component :is="layout">
+      <router-view />
+    </component>
   </div>
 </template>
+
+<script>
+import AdminLayout from './layouts/AdminLayout.vue'
+import DefaultLayout from './layouts/DefaultLayout.vue'
+
+export default {
+  computed: {
+    layout() {
+      if (this.$route.meta.layout && this.$route.meta.layout === 'AdminLayout') {
+        return AdminLayout;
+      }
+      return DefaultLayout;
+    }
+  },
+  created() {
+    this.$store.dispatch('init')
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
