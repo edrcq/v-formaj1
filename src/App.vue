@@ -19,9 +19,6 @@ export default {
       return DefaultLayout;
     }
   },
-  created() {
-    this.$store.dispatch('init')
-  }
 }
 </script>
 

@@ -23,13 +23,32 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
     meta: {
       layout: 'DefaultLayout',
-      requireAuth: false,
+      requireAuth: true,
     },
   },
   {
     path: '/r/:id',
     name: 'ReadPost',
     component: () => import(/* webpackChunkName: "blog" */ '../views/Blog/ReadPost.vue'),
+    meta: {
+      layout: 'DefaultLayout',
+      requireAuth: false,
+    },
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "auth" */ '../views/Login.vue'),
+    meta: {
+      layout: 'DefaultLayout',
+      requireAuth: false,
+    },
+  },
+
+  {
+    path: '/galery',
+    name: 'Galery',
+    component: () => import(/* webpackChunkName: "galery" */ '../views/Galery.vue'),
     meta: {
       layout: 'DefaultLayout',
       requireAuth: false,
@@ -58,5 +77,7 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+
+
 
 export default router;

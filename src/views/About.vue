@@ -23,6 +23,6 @@ export default {
         data2: 'green'
       }
     }
-  }}
+  }},
 }
 </script>

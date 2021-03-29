@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
+    <hello-world msg="Bonjour HTitle"></hello-world>
     <div>
       <router-link to="/r/1">Read Post 1</router-link>
       <latest-posts></latest-posts>
@@ -14,17 +15,20 @@
 // @ is an alias to /src
 import LatestPosts from '../components/Blog/LatestPosts.vue';
 import InputBase from '../components/InputBase.vue'
+import HelloWorld from '../components/HelloWorld.vue';
 
 export default {
   name: 'Home',
   components: {
     LatestPosts,
-    InputBase
+    InputBase,
+    HelloWorld,
   },
 
-  data() { return {
-    text: '',
-  }}
+  data() {
+    return {
+      text: '',
+    }}
 
 };
 </script>
