@@ -10,10 +10,23 @@
                     <router-link class="nav-item nav-link active" to="/">Home</router-link>
                     <router-link class="nav-item nav-link" to="/about">About</router-link>
                     <router-link class="nav-item nav-link" to="/login">Login</router-link>
+                    <change-locale></change-locale>
                 </div>
             </div>
+
         </nav>
 
         <slot></slot>
     </div>
 </template>
+
+<script>
+import ChangeLocale from '@/components/ChangeLocale.vue'
+
+export default {
+    components: {
+        ChangeLocale,
+    }
+}
+</script>
+        ChangeLocale

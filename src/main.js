@@ -31,6 +31,9 @@ Vue.use(vueDebounce, {
   listenTo: 'input'
 })
 
+/* i18n */
+import i18n from './plugins/i18n'
+
 Vue.config.productionTip = false;
 
 init_guards(router, store)
@@ -40,6 +43,7 @@ importModules({ store, router })
   .then(() => {
 
     new Vue({
+      i18n,
       router,
       store,
       render: (h) => h(App),
