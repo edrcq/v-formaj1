@@ -3,9 +3,9 @@
         <div class="col">
             <form @submit.prevent="submitLogin">
                 <label>Email</label>
-                <input type="email" v-model="email" /><br />
+                <input type="email" v-model="email" v-focus /><br />
                 <label>Password</label>
-                <input type="password" v-model="password" /><br />
+                <input type="password" v-model="password" v-focus /><br />
                 <button type="submit" class="btn btn-primary">Login now</button>
             </form>
         </div>

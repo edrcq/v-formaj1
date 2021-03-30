@@ -11,6 +11,9 @@ export default {
     mutations: {
         latests(state, list) {
             state.latests = list;
+        },
+        add_latest(state, post) {
+            state.latests.splice(0, 0, post)
         }
     },
     actions: {
@@ -22,6 +25,29 @@ export default {
             const { data } = await Posts.getLatest(max)
             console.log({ data })
             commit('latests', data)
+        },
+
+        async addPost({ commit }, post) {
+            post.createdAt = +new Date()
+            post.updatedAt = +new Date()
+            try {
+                const { data } = await Posts.create(post)
+                commit('add_latest', data)
+            }
+            catch(err) {
+                console.error(err)
+            }
+        },
+
+        async update(context, post) {
+            post.updatedAt = +new Date()
+            try {
+                const { data } = await Posts.update(post, post.id)
+                return data
+            }
+            catch(err) {
+                console.error(err)
+            }
         }
     },
     getters: {

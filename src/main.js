@@ -9,12 +9,16 @@ import importModules from './common/importModules'
 import "./assets/style.scss";
 import "billboard.js/dist/billboard.css";
 
+/* our plugins */
 import * as axiosPlugin from './plugins/axios';
 import BBChart from './plugins/billboard/BillboardChart';
+import corePlugin from './plugins/core'
 
 Vue.use(axiosPlugin);
-Vue.component('bb-chart', BBChart)
+Vue.component('bb-chart', BBChart);
+Vue.use(corePlugin)
 
+/* lazy load */
 import VueLazyload from 'vue-lazyload'
 Vue.use(VueLazyload, {
   preLoad: 1.3,
@@ -22,6 +26,10 @@ Vue.use(VueLazyload, {
   loading: require('./assets/loading.gif')
 })
 
+import vueDebounce from 'vue-debounce'
+Vue.use(vueDebounce, {
+  listenTo: 'input'
+})
 
 Vue.config.productionTip = false;
 

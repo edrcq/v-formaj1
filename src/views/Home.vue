@@ -7,6 +7,7 @@
       <latest-posts></latest-posts>
       <input-base v-model="text"></input-base>
       {{ text }}
+      <input-search></input-search>
     </div>
   </div>
 </template>
@@ -16,6 +17,7 @@
 import LatestPosts from '../components/Blog/LatestPosts.vue';
 import InputBase from '../components/InputBase.vue'
 import HelloWorld from '../components/HelloWorld.vue';
+import InputSearch from '../components/InputSearch.vue'
 
 export default {
   name: 'Home',
@@ -23,6 +25,7 @@ export default {
     LatestPosts,
     InputBase,
     HelloWorld,
+    InputSearch,
   },
 
   data() {
