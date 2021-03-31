@@ -6,20 +6,27 @@ import auth from './auth';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-    init(context) {
-      context.dispatch('posts/getLatest')
-      const already_token = localStorage.getItem('jwt_token')
-      if (already_token) {
-        context.commit('auth/token', already_token)
-      }
+const state = {}
+
+export const mutations = {
+
+}
+
+export const actions = {
+  init(context) {
+    context.dispatch('posts/getLatest')
+    const already_token = localStorage.getItem('jwt_token')
+    if (already_token) {
+      context.commit('auth/token', already_token)
     }
-  },
+  }
+}
+
+export default new Vuex.Store({
+  state,
+  mutations,
+  actions,
+  
   modules: {
     posts: posts,
     auth,

@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import HTitle from './HTitle'
+import HTitle from './FTest'
 
 export default {
   name: 'HelloWorld',

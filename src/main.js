@@ -12,11 +12,18 @@ import "billboard.js/dist/billboard.css";
 /* our plugins */
 import * as axiosPlugin from './plugins/axios';
 import BBChart from './plugins/billboard/BillboardChart';
-import corePlugin from './plugins/core'
+import corePlugin from './plugins/core';
+import errorPlugin from './plugins/errors';
+
+import { errorHandler, windowOnError, unhandledRejection } from '@/common/errorHandler'
+Vue.config.errorHandler = errorHandler
+window.onerror = windowOnError
+window.onunhandledrejection = unhandledRejection
 
 Vue.use(axiosPlugin);
 Vue.component('bb-chart', BBChart);
 Vue.use(corePlugin)
+Vue.use(errorPlugin)
 
 /* lazy load */
 import VueLazyload from 'vue-lazyload'

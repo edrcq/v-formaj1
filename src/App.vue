@@ -19,6 +19,10 @@ export default {
       return DefaultLayout;
     }
   },
+
+  errorCaptured(err, vm, info) {
+    console.log('Error captured', { err, vm, info })
+  }
 }
 </script>
 

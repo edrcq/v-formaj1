@@ -29,10 +29,10 @@ export default {
                 text: "Server is checking if you are legit"
             })
             this.$store.dispatch('auth/login', { email, password })
-                .then(() => swal({
-                    title: "Successful Login",
-                    text: "Happy to see you back"
-                }))
+                .then(() => {
+                    swal({ title: 'Success', text: 'Welcome back!' })
+                })
+                .catch(err => this.$actionError(err))
         }
     }
 }

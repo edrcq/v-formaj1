@@ -3,6 +3,9 @@ const routes = [
         path: '/admin',
         name: 'admin',
         component: () => import(/* webpackChunkName: "admin" */ './views/Admin.vue'),
+        meta: {
+            requireAuth: true,
+        },
         children: [
             {
                 path: 'add-post',
