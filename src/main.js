@@ -32,7 +32,9 @@ Vue.use(vueDebounce, {
 })
 
 /* i18n */
-import i18n from './plugins/i18n'
+import { i18n, addExternal } from './plugins/i18n'
+import { setLocaleListener } from './common/axios'
+addExternal(setLocaleListener)
 
 Vue.config.productionTip = false;
 

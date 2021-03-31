@@ -1,13 +1,13 @@
 <template>
     <div class="dropdown">
-        <button v-for="loc in locales" :key="`loc_${loc}`" @click="changeLocale(loc)">
+        <button v-for="loc in locales" :key="`loc_${loc}`" @click="setLocale(loc)">
             {{ loc.toUpperCase() }}
         </button>
     </div>
 </template>
 
 <script>
-import i18n from '../plugins/i18n'
+import { setLocale } from '../plugins/i18n'
 
 export default {
     computed: {
@@ -19,9 +19,7 @@ export default {
     },
 
     methods: {
-        changeLocale(loc) {
-            i18n.locale = loc
-        }
+        setLocale,
     }
 }
 </script>

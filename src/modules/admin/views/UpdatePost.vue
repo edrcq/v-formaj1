@@ -39,10 +39,6 @@ export default {
         }
     },
 
-    created() {
-        
-    },
-
     methods: {
         fetchPost() {
             this.fetching = true;

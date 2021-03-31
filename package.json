@@ -11,6 +11,7 @@
     "axios": "^0.21.1",
     "billboard.js": "^3.0.1",
     "bootstrap": "^4.6.0",
+    "coingecko-api": "^1.0.10",
     "core-js": "^3.6.5",
     "marked": "^2.0.1",
     "sweetalert": "^2.1.2",
