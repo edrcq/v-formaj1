@@ -8,7 +8,7 @@ export function getAllMarkets(vs_fiat = 'usd') {
     return http.get('/coins/markets?vs_currency=' + vs_fiat)
 }
 
-export function getCoinsList(vs_fiat = 'usd') {
+export function getCoinsList() {
     return http.get('/coins/list')
 }
     
